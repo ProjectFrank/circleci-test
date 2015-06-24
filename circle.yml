@@ -1,0 +1,4 @@
+test:
+  override:
+    - npm install -g eslint
+    - npm install -g esprima-fb
