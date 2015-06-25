@@ -1,8 +1,13 @@
 machine:
-  java:
-    version: openjdk8
+  node:
+    version: 0.11.13
+
+dependencies:
+  pre:
+    - npm install -g npm@1.4.9
+  override:
+    - npm install || npm install
 
 test:
   override:
-    - npm install -g eslint
-    - npm install -g esprima-fb
+    - npm run thing
