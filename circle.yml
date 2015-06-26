@@ -4,9 +4,11 @@ machine:
 
 dependencies:
   pre:
-    - npm install -g npm@1.4.9
+    - npm install -g gulp
+    - npm install -g bower
+    - npm install -g karma
   override:
-    - npm install || npm install
+    - echo "NO DEPS"
 
 test:
   override:
