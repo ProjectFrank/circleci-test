@@ -2,7 +2,7 @@ machine:
   node:
     version: 0.12.4
   services:
-    - rabbitmq
+    - rabbitmq-server
 
 dependencies:
   pre:
