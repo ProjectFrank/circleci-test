@@ -12,7 +12,7 @@ dependencies:
   override:
     - echo "NO DEPS"
   cache_directories:
-    - ~/circle-test/node_modules
+    - ~/circleci-test/node_modules
 
 test:
   override:
