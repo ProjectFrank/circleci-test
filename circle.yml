@@ -11,6 +11,8 @@ dependencies:
     - npm install -g karma
   override:
     - echo "NO DEPS"
+  cache_directories:
+    - ~/circle-test/node_modules
 
 test:
   override:
