@@ -8,9 +8,9 @@ dependencies:
   pre:
     - npm install -g gulp
     - mkdir test_dir
-    - cd test_dir && npm i gulp
+    - cd test_dir && touch cd_file
     - mkdir pwd_dir
-    - npm i gulp:
+    - touch pwd_file:
         pwd:
           pwd_dir
     - npm install -g bower
