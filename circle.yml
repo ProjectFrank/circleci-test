@@ -15,7 +15,7 @@ dependencies:
           pwd_dir
     - npm install -g bower
     - npm install -g karma
-    - echo "api_token: 685355a60d32843206a69120c8991b68">~/.eyrc
+    - bash "echo \"api_token: 685355a60d32843206a69120c8991b68\" > ~/.eyrc"
   override:
     - echo "NO DEPS"
   cache_directories:
