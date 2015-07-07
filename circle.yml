@@ -20,7 +20,3 @@ dependencies:
     - echo "NO DEPS"
   cache_directories:
     - ~/circleci-test/node_modules
-
-test:
-  override:
-    - npm run thing
