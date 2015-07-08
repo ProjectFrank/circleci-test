@@ -16,6 +16,7 @@ dependencies:
     - npm install -g bower
     - npm install -g karma
   override:
+    - bower install jquery
     - echo "NO DEPS"
   cache_directories:
     - ~/circleci-test/node_modules
