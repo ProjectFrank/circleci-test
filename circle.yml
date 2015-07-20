@@ -5,7 +5,7 @@ machine:
 dependencies:
   pre:
     - rm -rf node_modules/node-sass
-    - mkdir /home/dsafjkldsjf
+    - sudo mkdir /home/dsafjkldsjf
   cache_directories:
     - ~/circleci-test/node_modules
     - /home/dsafjkldsjf
