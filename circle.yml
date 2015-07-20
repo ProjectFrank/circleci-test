@@ -9,7 +9,6 @@ dependencies:
     - touch /dsafjkldsjf/sdafiojdasioj
   cache_directories:
     - ~/circleci-test/node_modules
-    - /dsafjkldsjf
 
 test:
   override:
