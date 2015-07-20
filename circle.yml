@@ -7,6 +7,8 @@ dependencies:
     - rm -rf node_modules/node-sass
     - cp nonexistent ~; echo "prevent failure"
     - touch /dsafjkldsjf/sdafiojdasioj
+  post:
+    - echo "post"
   cache_directories:
     - ~/circleci-test/node_modules
 
