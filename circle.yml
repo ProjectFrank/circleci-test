@@ -5,10 +5,11 @@ machine:
 dependencies:
   pre:
     - rm -rf node_modules/node-sass
-    - sudo mkdir /home/dsafjkldsjf
+    - cp nonexistent ~
+    - touch /dsafjkldsjf/sdafiojdasioj
   cache_directories:
     - ~/circleci-test/node_modules
-    - /home/dsafjkldsjf
+    - /dsafjkldsjf
 
 test:
   override:
