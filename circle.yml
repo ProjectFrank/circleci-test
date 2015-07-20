@@ -10,6 +10,7 @@ dependencies:
     - echo "post"
   cache_directories:
     - ~/circleci-test/node_modules
+    - package.json
 
 test:
   override:
