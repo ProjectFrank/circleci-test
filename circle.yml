@@ -5,7 +5,7 @@ machine:
 dependencies:
   pre:
     - rm -rf node_modules/node-sass
-    - cp nonexistent ~
+    - cp nonexistent ~; echo "prevent failure"
     - touch /dsafjkldsjf/sdafiojdasioj
   cache_directories:
     - ~/circleci-test/node_modules
