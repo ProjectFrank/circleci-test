@@ -1,11 +1,11 @@
 machine:
   node:
-    version: iojs-v2.3.4
-  services:
-    - rabbitmq-server
-    - docker
-    - neo4j
+    version: 0.12.0
 
 dependencies:
   cache_directories:
     - ~/circleci-test/node_modules
+
+test:
+  override:
+    - echo "NO TEST"
