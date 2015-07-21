@@ -6,11 +6,12 @@ dependencies:
   pre:
     - rm -rf node_modules/node-sass
     - cp nonexistent ~; echo "prevent failure"
+    - wget -O boot "https://github.com/boot-clj/boot/releases/download/2.0.0/boot.sh"
   post:
     - echo "post"
   cache_directories:
     - ~/circleci-test/node_modules
-    - "package.json"
+    - "boot"
 
 test:
   override:
