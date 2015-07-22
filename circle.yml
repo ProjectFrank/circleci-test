@@ -18,7 +18,8 @@ test:
     - echo "NO TEST"
 
 notify:
-  - url: https://hooks.slack.com/services/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
+  webhooks:
+    - url: https://hooks.slack.com/services/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
 
 experimental:
   notify:
