@@ -13,6 +13,8 @@ dependencies:
     - ~/circleci-test/node_modules
     - "boot"
 
+database:
+
 test:
   override:
     - echo "NO TEST"
