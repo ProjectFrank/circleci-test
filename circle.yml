@@ -11,9 +11,8 @@ dependencies:
     - echo "post"
   cache_directories:
     - ~/circleci-test/node_modules
+    - /usr/local/lib/python2.7/dist-packages
     - "boot"
-
-database:
 
 test:
   override:
