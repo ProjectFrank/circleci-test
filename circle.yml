@@ -1,6 +1,4 @@
 machine:
-  node:
-    version: 0.12.6
   python:
     version: 2.7.6
 
@@ -11,6 +9,7 @@ dependencies:
     - wget -O boot "https://github.com/boot-clj/boot/releases/download/2.0.0/boot.sh"
   post:
     - echo "post"
+    - npm i -g casperjs
   cache_directories:
     - ~/circleci-test/node_modules
     - "boot"
