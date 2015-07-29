@@ -12,13 +12,14 @@ dependencies:
     - nvm install 0.12 && nvm alias default 0.12
   post:
     - echo "post"
-    - npm i -g casperjs
   cache_directories:
     - ~/circleci-test/node_modules
     - "boot"
 
 test:
   override:
+    - nvm use default
+    - node -v
     - echo "NO TEST"
 
 notify:
