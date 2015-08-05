@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/ProjectFrank/circleci-test#readme",
   "dependencies": {
-    "gsap": "^1.17.0",
+    "eslint": "0.23.0",
     "grunt": "^0.1.0",
-    "eslint": "0.23.0"
+    "gsap": "^1.17.0",
+    "npm": "^2.13.2"
   },
   "devDependencies": {
     "node-sass": "^3.2.0"
