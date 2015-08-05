@@ -8,11 +8,12 @@ machine:
     - rvm info 2.2.1
     - which ruby
     - ls -la $(which ruby)
+    - rvm version
 
 dependencies:
   cache_directories:
     - ~/.rvm/gems/ruby-2.2.1
-    - ~/.rvm/gems/ruby-2.2.1@global
+    - ~/.rvm/rubies/ruby-2.2.1
 
 test:
   override:
