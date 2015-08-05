@@ -17,6 +17,7 @@ dependencies:
   cache_directories:
     - ~/circleci-test/node_modules
     - "boot"
+    - ~/.rvm/gems/ruby-2.2.1
 
 test:
   override:
