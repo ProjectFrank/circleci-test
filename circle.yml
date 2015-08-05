@@ -4,6 +4,7 @@ machine:
   python:
     version: 2.7.6
   post:
+    - rvm repair
     - rvm list
     - rvm use 2.2.1
 
