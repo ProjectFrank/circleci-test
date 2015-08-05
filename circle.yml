@@ -3,6 +3,8 @@ machine:
 #    version: 0.12.6
   python:
     version: 2.7.6
+  post:
+    - rvm use 2.2.1
 
 dependencies:
   pre:
