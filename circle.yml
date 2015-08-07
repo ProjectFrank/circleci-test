@@ -8,6 +8,7 @@ machine:
     - ls -la $(which ruby)
     - rvm version
     - pyenv
+    - printf '127.0.0.1       local.jackpocket.com\n' >> /etc/hosts
   hosts:
     local.jackpocket.com: 127.0.0.1
 
@@ -15,6 +16,9 @@ dependencies:
   cache_directories:
     - ~/.rvm/gems/ruby-2.2.1
     - ~/.rvm/rubies/ruby-2.2.1
+  pre:
+    - curl -L -o https://github.com/tesseract-ocr/tesseract/archive/xxx.tar.gz
+    - tar zxvf xxx.tar.gz  
 
 test:
   override:
