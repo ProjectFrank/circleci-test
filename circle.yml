@@ -1,6 +1,6 @@
 machine:
-#  node:
-#    version: 0.12.6
+  node:
+    version: stable
   post:
     - rvm use 2.2.1
     - rvm info 2.2.1
