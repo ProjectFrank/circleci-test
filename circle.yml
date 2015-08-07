@@ -8,6 +8,7 @@ machine:
     - ls -la $(which ruby)
     - rvm version
     - pyenv
+    - '[[ ! -s "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow'
   hosts:
     local.jackpocket.com: 127.0.0.1
 
