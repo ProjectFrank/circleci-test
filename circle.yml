@@ -8,7 +8,6 @@ machine:
     - ls -la $(which ruby)
     - rvm version
     - pyenv
-    - printf '127.0.0.1       local.jackpocket.com\n' >> /etc/hosts
   hosts:
     local.jackpocket.com: 127.0.0.1
 
