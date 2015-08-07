@@ -16,7 +16,7 @@ dependencies:
   cache_directories:
     - ~/.rvm/gems/ruby-2.2.1
     - ~/.rvm/rubies/ruby-2.2.1
-  pre:
+  override:
     - curl -L -o https://github.com/tesseract-ocr/tesseract/archive/xxx.tar.gz
     - tar zxvf xxx.tar.gz  
 
