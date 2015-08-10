@@ -1,6 +1,8 @@
 machine:
   node:
     version: stable
+  environment:
+    XCODE_SCHEME: CircleCI-Sample
   post:
     - rvm use 2.2.1
     - rvm info 2.2.1
@@ -9,8 +11,6 @@ machine:
     - rvm version
     - pyenv
     - '[[ ! -s "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow'
-  hosts:
-    local.jackpocket.com: 127.0.0.1
 
 dependencies:
   cache_directories:
