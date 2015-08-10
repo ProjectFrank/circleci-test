@@ -2,7 +2,8 @@ machine:
   node:
     version: stable
   environment:
-    XCODE_SCHEME: CircleCI-Sample
+    XCODE_WORKSPACE: dummy
+    XCODE_SCHEME: dummy
   post:
     - rvm use 2.2.1
     - rvm info 2.2.1
