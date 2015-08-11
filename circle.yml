@@ -12,6 +12,7 @@ machine:
     - rvm version
     - pyenv
     - '[[ ! -s "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow'
+    - echo $CIO_BUILD_HASH
   services:
     - docker
   python:
