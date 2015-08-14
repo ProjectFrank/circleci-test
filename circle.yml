@@ -26,7 +26,8 @@ dependencies:
     - ~/.rvm/rubies/ruby-2.2.1
   override:
     - curl -L -o https://github.com/tesseract-ocr/tesseract/archive/xxx.tar.gz
-    - tar zxvf xxx.tar.gz  
+    - tar zxvf xxx.tar.gz
+    - echo "stuff"
 
 test:
   override:
