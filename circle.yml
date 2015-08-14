@@ -19,15 +19,19 @@ machine:
     version: 2.7
 
 dependencies:
-  pre:
-    - sleep 120
   cache_directories:
     - ~/.rvm/gems/ruby-2.2.1
     - ~/.rvm/rubies/ruby-2.2.1
+    - mongodb-linux-x86_64-3.0.5
   override:
     - curl -L -o https://github.com/tesseract-ocr/tesseract/archive/xxx.tar.gz
     - tar zxvf xxx.tar.gz
     - echo "stuff"
+  pre:
+    - if [[ ! -d mongodb-linux-x86_64-3.0.5 ]]; then wget http://downloads.mongodb.org/linux/mongodb-linux-x86_64-3.0.4.tgz && tar xvzf mongodb-linux-x86_64-3.0.5.tgz; fi
+    - sudo service mongodb stop
+    - sudo cp mongodb-linux-x86_64-3.0.4/bin/* /usr/bin
+    - sudo sudo service mongodb start
 
 test:
   override:
