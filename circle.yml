@@ -19,6 +19,8 @@ machine:
     version: 2.7
 
 dependencies:
+  pre:
+    - sleep 120
   cache_directories:
     - ~/.rvm/gems/ruby-2.2.1
     - ~/.rvm/rubies/ruby-2.2.1
