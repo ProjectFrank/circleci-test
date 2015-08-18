@@ -31,7 +31,7 @@ test:
   override:
     - cat:
         files:
-          - innerdir/testfile.txt
+          - testfile.txt
         pwd: innerdir
 
 notify:
