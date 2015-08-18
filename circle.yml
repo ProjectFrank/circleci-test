@@ -5,6 +5,7 @@ machine:
     log: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
   post:
     - echo $log
+    - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
   services:
     - docker
 
