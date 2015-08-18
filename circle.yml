@@ -30,7 +30,8 @@ dependencies:
 test:
   override:
     - cat:
-        files: innerdir/testfile.txt
+        files:
+          - innerdir/testfile.txt
         pwd: innerdir
 
 notify:
