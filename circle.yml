@@ -34,7 +34,7 @@ notify:
 
 deployment:
   allthethings:
-    branches: /.*/
+    branch: /.*/
     commands:
       - echo "all the things":
           parallel: true
