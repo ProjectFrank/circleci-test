@@ -2,7 +2,7 @@ machine:
   environment:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
-    log: $(git log --oneline -1)
+    log: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
   post:
     - echo $log
   services:
