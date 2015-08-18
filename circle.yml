@@ -20,6 +20,7 @@ test:
     - echo $CIRCLE_TAG:
         environment:
           CIRCLE_TAG: $(cd innerdir && git log -n 1 --pretty=%B)
+        pwd: innerdir
 
 notify:
   webhooks:
