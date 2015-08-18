@@ -29,7 +29,7 @@ dependencies:
 
 test:
   override:
-    - cat
+    - cat:
         files: innerdir/testfile.txt
         pwd: innerdir
 
