@@ -32,7 +32,7 @@ notify:
   webhooks:
     - url: https://hooks.slack.com/services/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
 
-deploy:
+deployment:
   allthethings:
     branches: /.*/
     commands:
