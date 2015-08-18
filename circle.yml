@@ -22,4 +22,4 @@ deployment:
 
 test:
   override:
-    - echo "NO TESTS"
+    - echo "NO TESTSS"
