@@ -4,27 +4,11 @@ machine:
   environment:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
-  post:
-    - rvm use 2.2.1
-    - rvm info 2.2.1
-    - which ruby
-    - ls -la $(which ruby)
-    - rvm version
-    - pyenv
-    - '[[ ! -s "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow'
-    - echo $CIO_BUILD_HASH
   services:
     - docker
-  python:
-    version: 2.7
 
 dependencies:
-  cache_directories:
-    - ~/.rvm/gems/ruby-2.2.1
-    - ~/.rvm/rubies/ruby-2.2.1
   override:
-    - curl -L -o https://github.com/tesseract-ocr/tesseract/archive/xxx.tar.gz
-    - tar zxvf xxx.tar.gz
     - echo "stuff"
 
 test:
