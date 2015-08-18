@@ -1,23 +1,9 @@
 machine:
-  node:
-    version: stable
   environment:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
   services:
     - docker
-
-test:
-  override:
-    - cat:
-        files:
-          - testfile.txt
-        pwd: innerdir
-        parallel: true
-    - echo $CIRCLE_TAG:
-        environment:
-          CIRCLE_TAG: $(cd innerdir && git log -n 1 --pretty=%B)
-        pwd: innerdir
 
 notify:
   webhooks:
