@@ -3,6 +3,7 @@ general:
 
 machine:
   pre:
+    - sudo apt-get update
     - mkdir -p ~/nodirexists
     - echo nothing
     - sudo rm -rf /usr/local/go
