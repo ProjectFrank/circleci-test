@@ -4,6 +4,7 @@ general:
 machine:
   pre:
     - mkdir -p ~/nodirexists
+    - echo nothing
   environment:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
