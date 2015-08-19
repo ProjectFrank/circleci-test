@@ -26,7 +26,8 @@ deployment:
           parallel: true
 
 dependencies:
-  - pwd
+  override:
+    - pwd
   
 test:
   override:
