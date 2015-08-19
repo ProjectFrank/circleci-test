@@ -1,9 +1,9 @@
 general:
-  build_dir: ~/nodirexists
+  build_dir: ../nodirexists
 
 machine:
   pre:
-    - mkdir -p ~/nodirxists
+    - mkdir -p ~/nodirexists
   environment:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
