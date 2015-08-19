@@ -1,5 +1,5 @@
 general:
-  build_dir: ../nodirexists
+  build_dir: ../$THING
 
 machine:
   pre:
@@ -8,6 +8,7 @@ machine:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
     CIRCLE_TAG: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
+    THING: nodirexists
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
