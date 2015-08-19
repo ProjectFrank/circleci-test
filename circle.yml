@@ -5,7 +5,11 @@ machine:
   pre:
     - mkdir -p ~/nodirexists
     - echo nothing
+    - wget http://apache.mirror.iweb.ca/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+    - tar xzvf apache-maven-3.3.3-bin.tar.gz
+    - mv apache-maven-3.3.3 .m2/
   environment:
+    PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
     CIRCLE_TAG: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
@@ -13,6 +17,7 @@ machine:
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
+    - mvn -v
   services:
     - docker
   ruby:
