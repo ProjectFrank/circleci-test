@@ -25,6 +25,10 @@ deployment:
       - echo "all the things":
           parallel: true
 
+dependencies:
+  - pwd
+  
 test:
   override:
     - echo "NO TESTSS"
+    - pwd
