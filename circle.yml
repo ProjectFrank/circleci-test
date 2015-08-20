@@ -1,6 +1,5 @@
 general:
   build_dir: ../$THING
-
 machine:
   pre:
     - echo nothing
@@ -16,12 +15,14 @@ machine:
     - mvn -v
     - sudo rm -rf /usr/local/go
     - if [ ! -e go1.5.linux-amd64.tar.gz ]; then curl -o go1.5.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz; fi
-# - curl -o go1.5.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz
     - sudo tar -C /usr/local -xzf go1.5.linux-amd64.tar.gz
   services:
     - docker
-  ruby:
-    version: 2.1.6
+  post:
+    - rvm list
+    - rvm use 2.2.3
+    - rvm list
+    - which ruby
 
 notify:
   webhooks:
@@ -42,5 +43,6 @@ dependencies:
   
 test:
   override:
+    - go version
     - echo "NO TESTSS"
     - pwd
