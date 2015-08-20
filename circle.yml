@@ -1,5 +1,3 @@
-general:
-  build_dir: ../$THING
 machine:
   pre:
     - echo nothing
@@ -36,8 +34,6 @@ deployment:
           parallel: true
 
 dependencies:
-  pre:
-    - npm install
   cache_directories:
     - ~/go1.5.linux-amd64.tar.gz
     - ~/.rvm/rubies/ruby-2.2.3
