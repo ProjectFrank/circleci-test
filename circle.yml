@@ -43,5 +43,5 @@ dependencies:
 test:
   override:
     - go version
-    - echo "NO TESTS"
+    - echo "NO TESTSS"
     - pwd
