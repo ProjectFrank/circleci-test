@@ -36,6 +36,8 @@ deployment:
           parallel: true
 
 dependencies:
+  pre:
+    - npm install
   cache_directories:
     - ~/go1.5.linux-amd64.tar.gz
     - ~/.rvm/rubies/ruby-2.2.3
@@ -43,5 +45,5 @@ dependencies:
 test:
   override:
     - go version
-    - echo "NO TESTSS"
+    - echo "NO TESTS"
     - pwd
