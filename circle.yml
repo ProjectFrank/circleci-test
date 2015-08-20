@@ -35,8 +35,6 @@ deployment:
           parallel: true
 
 dependencies:
-  pre:
-    - sudo cp /nonexistent .
   override:
     - pwd
   cache_directories:
