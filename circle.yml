@@ -10,11 +10,10 @@ machine:
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
     - sudo bash ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
   services:
-    - docker
     - cassandra
   pre:
-    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
-    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
+#    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
+#    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
 
 notify:
   webhooks:
