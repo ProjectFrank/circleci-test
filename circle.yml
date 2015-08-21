@@ -8,15 +8,7 @@ machine:
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-    - mvn -v
-    - sudo rm -rf /usr/local/go
-    - if [ ! -e go1.5.linux-amd64.tar.gz ]; then curl -o go1.5.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz; fi
-    - sudo tar -C /usr/local -xzf go1.5.linux-amd64.tar.gz
-    - rvm list
-    - rvm use 2.2.3
-    - rvm list
-    - which ruby
-    - ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
+    - sudo ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
   services:
     - docker
     - cassandra
