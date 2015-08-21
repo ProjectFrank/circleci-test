@@ -16,6 +16,7 @@ machine:
     - rvm use 2.2.3
     - rvm list
     - which ruby
+    - ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
   services:
     - docker
     - cassandra
