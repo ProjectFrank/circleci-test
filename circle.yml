@@ -10,6 +10,7 @@ machine:
     CIRCLE_TAG: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
     THING: nodirexists
   post:
+    - cp ~/nonexistent .
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
   services:
