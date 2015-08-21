@@ -8,7 +8,7 @@ machine:
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-    - sudo ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
+    - sudo bash ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
   services:
     - docker
     - cassandra
