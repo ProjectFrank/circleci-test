@@ -8,12 +8,13 @@ machine:
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-    - sudo bash ./$CIRCLE_PROJECT_REPONAME/cassandra.sh
-  services:
-    - cassandra
   pre:
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
+checkout:
+  post:
+    - pwd:
+        pwd: $CIRCLE_PROJECT_REPONAME
 
 notify:
   webhooks:
