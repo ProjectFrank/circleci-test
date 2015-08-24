@@ -13,8 +13,7 @@ machine:
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
 checkout:
   post:
-    - pwd:
-        pwd: $CIRCLE_PROJECT_REPONAME
+    - pwd
 
 notify:
   webhooks:
