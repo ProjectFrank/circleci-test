@@ -23,7 +23,7 @@ deployment:
   allthethings:
     branch: /.*/
     commands:
-      - echo "all the things":
+      - echo "all the thingss":
           parallel: true
 
 dependencies:
