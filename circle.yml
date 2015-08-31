@@ -9,6 +9,7 @@ machine:
     THING: nodirexists
   post:
     - echo $log
+    - echo "more things"
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
   services:
     - docker
