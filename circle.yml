@@ -2,8 +2,6 @@ general:
   build_dir: ../$THING
 
 machine:
-  pre:
-    - mkdir -p ~/nodirexists
   environment:
     XCODE_WORKSPACE: dummy
     XCODE_SCHEME: dummy
