@@ -34,7 +34,6 @@ test:
   override:
     - go version
     - echo "NO TESTS"
-    - pwd
 
 database:
   pre:
