@@ -9,9 +9,6 @@ machine:
   pre:
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
-checkout:
-  post:
-    - pwd
 
 notify:
   webhooks:
