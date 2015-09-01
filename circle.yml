@@ -2,7 +2,6 @@ machine:
   environment:
     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
     CIRCLE_TAG: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
-    THING: nodirexists
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
