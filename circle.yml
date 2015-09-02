@@ -35,9 +35,3 @@ test:
     - go version
     - echo "NO TESTS"
     - git diff
-
-database:
-  pre:
-    - |-
-      mongo admin --eval 'db.createUser({ user: "ludoblues", pwd: "5fiQgm_z", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] });'
-    - echo "stuff"
