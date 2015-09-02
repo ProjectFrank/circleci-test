@@ -15,7 +15,7 @@ notify:
 
 deployment:
   allthethings:
-    branch: /.*/
+    tag: /.*/
     commands:
       - echo "all the thingss":
           parallel: true
