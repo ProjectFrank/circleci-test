@@ -17,7 +17,7 @@ deployment:
   allthethings:
     tag: /.*/
     commands:
-      - echo "all the thingss":
+      - echo "all the things":
           parallel: true
 
 # dependencies:
