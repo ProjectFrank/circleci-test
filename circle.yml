@@ -5,7 +5,6 @@ machine:
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-    - PAGER=cat chmod
     - echo "stuff" > $CIRCLE_ARTIFACTS/stuff
   pre:
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
