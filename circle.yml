@@ -33,4 +33,5 @@ dependencies:
     
 test:
   override:
+    - echo "noop"
     - ./do-exclusively --branch stupid-branch sleep 600
