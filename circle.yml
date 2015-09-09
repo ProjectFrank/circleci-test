@@ -1,7 +1,6 @@
 machine:
   environment:
     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
-    CIRCLE_TAG: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
   post:
     - echo $log
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
@@ -10,13 +9,9 @@ machine:
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
 
-notify:
-  webhooks:
-    - url: https://hooks.slack.com/services/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
-
 deployment:
   allthethings:
-    tag: /.*/
+    tag: /release\/.*/
     commands:
       - echo "all the things":
           parallel: true
