@@ -66,6 +66,7 @@ set -o pipefail
     while true; do
         echo "$api_url"
         response=$(curl -s -H "Accept: application/json" "$api_url")
+        echo $response
         builds= $(echo response | jq "$jq_prog")
         echo $builds
         if [[ $builds ]]; then
