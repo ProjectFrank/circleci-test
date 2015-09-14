@@ -1,9 +1,9 @@
 machine:
   environment:
     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
-    NVM_DIR: ~/.nvm
+    SHORT_SHA1: echo $CIRCLE_SHA1 | cut -c1-4
   post:
-    - echo $log
+    - echo $SHORT_SHA1
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
     - echo "stuff" > $CIRCLE_ARTIFACTS/stuff
   pre:
