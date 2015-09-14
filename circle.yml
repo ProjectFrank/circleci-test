@@ -30,6 +30,8 @@ deployment:
 dependencies:
   pre:
     - echo "stuff:more stuff"
+  cache_directories:
+    - /usr/local
 test:
   override:
     - echo "noop"
