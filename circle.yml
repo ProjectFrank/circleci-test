@@ -1,7 +1,7 @@
 machine:
   environment:
     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
-    SHORT_SHA1: echo $CIRCLE_SHA1 | cut -c1-4
+    SHORT_SHA1: $(echo $CIRCLE_SHA1 | cut -c1-4)
   post:
     - echo $SHORT_SHA1
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
