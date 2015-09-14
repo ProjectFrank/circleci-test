@@ -31,5 +31,3 @@ dependencies:
   cache_directories:
     - /usr/local
 test:
-  override:
-    - echo "noop"
