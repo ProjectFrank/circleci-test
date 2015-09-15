@@ -7,7 +7,8 @@ machine:
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
     - echo "stuff" > $CIRCLE_ARTIFACTS/stuff
   pre:
-     - echo $CIRCLE_BRANCH
+     - case $CIRCLE_BRANCH in stupid-branch) echo "export thing=\"stuff\"" >> .circlerc;; esac;;
+     - echo $thing
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
   node:
