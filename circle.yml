@@ -23,6 +23,13 @@ test:
   override:
     - "no tests""
       
+deployment:
+  allthethings:
+    tag: /release/.*/
+    commands:
+      - echo "all the things":
+          parallel: true
+
 # dependencies:
 #   cache_directories:
 #     - ~/go1.5.linux-amd64.tar.gz
