@@ -23,12 +23,12 @@ test:
   override:
     - "no tests""
       
-deployment:
-  allthethings:
-    tag: /release\/.*/
-    commands:
-      - echo "all the things":
-          parallel: true
+# deployment:
+#   allthethings:
+#     tag: /release\/.*/
+#     commands:
+#       - echo "all the things":
+#           parallel: true
 
 # dependencies:
 #   cache_directories:
