@@ -11,7 +11,7 @@ machine:
      - echo $thing
      - sudo apt-get update; sudo apt-get install jq
      - |
-       PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq '.[0].vcs_revision' | tr -d '\"') echo "export PREVIOUS_SHA1=$PREVIOUS_SHA1" >> ~/.circlerc
+       PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq '.[0].vcs_revision' | tr -d '\"'); echo "export PREVIOUS_SHA1=$PREVIOUS_SHA1" >> ~/.circlerc
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
   node:
