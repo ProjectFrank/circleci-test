@@ -21,11 +21,11 @@ machine:
 
 test:
   override:
-    - "no tests""
+    - echo "no tests"
       
 deployment:
   allthethings:
-    tag: /release/.*/
+    tag: /release\/.*/
     commands:
       - echo "all the things":
           parallel: true
