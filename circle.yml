@@ -21,8 +21,7 @@ machine:
 
 test:
   override:
-    - echo stuff:
-      parallel: true
+    - "no tests""
       
 deployment:
   allthethings:
