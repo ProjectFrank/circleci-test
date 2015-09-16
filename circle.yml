@@ -2,7 +2,6 @@ machine:
   environment:
     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
     SHORT_SHA1: $(echo $CIRCLE_SHA1 | cut -c1-4)
-    PREVIOUS_SHA1: $(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq '.[0].vcs_revision' | tr -d '"')
   post:
     - echo $SHORT_SHA1
     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
@@ -11,6 +10,7 @@ machine:
      - case $CIRCLE_BRANCH in stupid-branch) echo "export thing=\"stuff\"" >> .circlerc;; esac;
      - echo $thing
      - sudo apt-get update; sudo apt-get install jq
+     - echo 'export PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq ".[0].vcs_revision" | tr -d \'"\')' >> ~/.circlerc
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
   node:
