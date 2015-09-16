@@ -10,7 +10,7 @@ machine:
      - case $CIRCLE_BRANCH in stupid-branch) echo "export thing=\"stuff\"" >> .circlerc;; esac;
      - echo $thing
      - sudo apt-get update; sudo apt-get install jq
-     - echo 'export PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq ".[0].vcs_revision" | tr -d \'"\')' >> ~/.circlerc
+     - echo 'export PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq ".[0].vcs_revision" | tr -d \'\"\')' >> ~/.circlerc
 #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
 #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
   node:
