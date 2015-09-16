@@ -18,6 +18,8 @@ machine:
        echo "stuff
        more
        stuff"
+  services:
+    - cassandra
   node:
     version: 0.12.0
 
