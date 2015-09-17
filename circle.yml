@@ -1,28 +1,28 @@
-machine:
-  environment:
-    PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
-    SHORT_SHA1: |
-                $(echo $CIRCLE_SHA1 | cut -c1-4)
-  post:
-    - echo $SHORT_SHA1
-    - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-    - echo $PREVIOUS_SHA1
-  pre:
-     - case $CIRCLE_BRANCH in stupid-branch) echo "export thing=\"stuff\"" >> .circlerc;; esac;
-     - echo $thing
-     - sudo apt-get update; sudo apt-get install jq
-     - |
-       PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq '.[0].vcs_revision' | tr -d '\"'); echo "export PREVIOUS_SHA1=$PREVIOUS_SHA1" >> ~/.circlerc
-#    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
-#    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
-     - |
-       echo "stuff
-       more
-       stuff"
-  services:
-    - cassandra
-  node:
-    version: 0.12.0
+# machine:
+#   environment:
+#     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
+#     SHORT_SHA1: |
+#                 $(echo $CIRCLE_SHA1 | cut -c1-4)
+#   post:
+#     - echo $SHORT_SHA1
+#     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
+#     - echo $PREVIOUS_SHA1
+#   pre:
+#      - case $CIRCLE_BRANCH in stupid-branch) echo "export thing=\"stuff\"" >> .circlerc;; esac;
+#      - echo $thing
+#      - sudo apt-get update; sudo apt-get install jq
+#      - |
+#        PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq '.[0].vcs_revision' | tr -d '\"'); echo "export PREVIOUS_SHA1=$PREVIOUS_SHA1" >> ~/.circlerc
+# #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
+# #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
+#      - |
+#        echo "stuff
+#        more
+#        stuff"
+#   services:
+#     - cassandra
+#   node:
+#     version: 0.12.0
 
 
 
@@ -30,14 +30,21 @@ test:
   override:
     - echo "no tests"
       
-deployment:
-  allthethings:
-    tag: /release\/.*/
-    commands:
-      - echo "all the things":
-          parallel: true
+# deployment:
+#   allthethings:
+#     tag: /release\/.*/
+#     commands:
+#       - echo "all the things":
+#           parallel: true
 
 # dependencies:
 #   cache_directories:
 #     - ~/go1.5.linux-amd64.tar.gz
 #     - ~/.rvm/rubies/ruby-2.2.3
+
+deployment:
+  tomaster:
+    branch: master
+    commands:
+      - ::wait-for-deploy-lock
+      - sleep 120
