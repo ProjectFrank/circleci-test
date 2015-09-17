@@ -37,14 +37,16 @@ test:
 #       - echo "all the things":
 #           parallel: true
 
-# dependencies:
-#   cache_directories:
-#     - ~/go1.5.linux-amd64.tar.gz
-#     - ~/.rvm/rubies/ruby-2.2.3
+dependencies:
+  # cache_directories:
+  #   - ~/go1.5.linux-amd64.tar.gz
+  #   - ~/.rvm/rubies/ruby-2.2.3
+  override:
+    - echo "no deps"
 
 deployment:
   tomaster:
-    branch: master
+    branch: stupid-branch
     commands:
       - ::wait-for-deploy-lock
       - sleep 120
