@@ -46,9 +46,6 @@ dependencies:
   override:
     - echo "no deps"
 
-deployment:
-  tomaster:
-    branch: stupid-branch
-    commands:
-      - ::wait-for-deploy-lock
-      - sleep 120
+teardown:
+  pre:
+    - echo "stuff"
