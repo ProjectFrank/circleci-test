@@ -26,7 +26,7 @@
 machine:
   pre:
     - sudo curl -L -o /usr/bin/docker 'https://s3-external-1.amazonaws.com/circle-downloads/docker-1.8.1-circleci'; sudo chmod 0755 /usr/bin/docker; true
-
+    - echo "shopt -s globstar" >> ~/.circlerc
 
 test:
   override:
@@ -40,9 +40,8 @@ test:
 #           parallel: true
 
 dependencies:
-  # cache_directories:
-  #   - ~/go1.5.linux-amd64.tar.gz
-  #   - ~/.rvm/rubies/ruby-2.2.3
+  cache_directories:
+    - **/*
   override:
     - echo "no deps"
 
