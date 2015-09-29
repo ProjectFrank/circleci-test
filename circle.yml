@@ -26,9 +26,6 @@
 machine:
   pre:
     - pwd
-    - echo "offensive colon\\: " $thing:
-        environment: 
-          thing: "stuff"
 test:
   override:
     - echo "no tests"
