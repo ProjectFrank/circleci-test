@@ -43,6 +43,9 @@ dependencies:
   override:
     - echo "no deps"
 
+build:
+  - echo stuff
+
 teardown:
   pre:
     - echo "stuff"
