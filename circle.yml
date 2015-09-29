@@ -26,7 +26,8 @@
 machine:
   pre:
     - sudo curl -L -o /usr/bin/docker 'https://s3-external-1.amazonaws.com/circle-downloads/docker-1.8.1-circleci'; sudo chmod 0755 /usr/bin/docker; true
-    - echo "shopt -s globstar" >> ~/.circlerc
+    - echo "offensive colon: ":
+        - timeout: 1000
 
 test:
   override:
