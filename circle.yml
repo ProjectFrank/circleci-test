@@ -44,7 +44,8 @@ dependencies:
     - echo "no deps"
 
 compile:
-  - echo stuff
+  override: 
+    - echo stuff
 
 teardown:
   pre:
