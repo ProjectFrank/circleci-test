@@ -30,16 +30,13 @@ test:
   override:
     - echo "no tests"
       
-# deployment:
-#   allthethings:
-#     tag: /release\/.*/
-#     commands:
-#       - echo "all the things":
-#           parallel: true
+deployment:
+  allthethings:
+    tag: /.*/
+    commands:
+      - echo "deployment"
 
 dependencies:
-  cache_directories:
-    - ./*
   override:
     - echo "no deps"
 
