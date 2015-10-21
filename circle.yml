@@ -39,6 +39,13 @@ deployment:
 dependencies:
   pre:
     - echo $foo
+    - npm adduser <<!
+
+      frank
+
+      foo
+
+      thing@thing.com
   override:
     - sudo apt-get update; sudo apt-get install libicu52
     - curl --output /home/ubuntu/bin/phantomjs-2.0.1-linux-x86_64-dynamic https://s3.amazonaws.com/circle-support-bucket/phantomjs/phantomjs-2.0.1-linux-x86_64-dynamic
