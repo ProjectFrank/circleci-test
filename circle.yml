@@ -26,6 +26,8 @@
 machine:
   pre:
     - pwd
+  post:
+    - pwd
 test:
   override:
     - echo "no tests"
