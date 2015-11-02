@@ -1,6 +1,6 @@
 test:
   override:
-    - echo "no testss"
+    - echo "no tests"
       
 deployment:
   allthethings:
