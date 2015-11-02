@@ -15,3 +15,7 @@ compile:
 teardown:
   pre:
     - echo "stuff"
+
+notify:
+  webhooks:
+    - url: http://requestb.in/sf61assf
