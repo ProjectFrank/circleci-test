@@ -18,4 +18,4 @@ teardown:
 
 notify:
   webhooks:
-    - url: http://requestb.in/sf61assf
+    - url: http://requestb.in/notvalid
