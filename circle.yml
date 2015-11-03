@@ -19,3 +19,12 @@ teardown:
 notify:
   webhooks:
     - url: http://requestb.in/notvalid
+
+dependencies:
+  cache_directories:
+    - ~/nvm/versions/node/v4.2.1/bin
+    - ~/nvm/versions/node/v4.2.1/lib/node_modules
+
+machine:
+  pre:
+    - echo "stuff" # echoes stuff
