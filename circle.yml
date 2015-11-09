@@ -33,3 +33,5 @@ dependencies:
 machine:
   pre:
     - echo "stuff" # echoes stuff
+  ruby:
+    version: jruby-1.7.16
