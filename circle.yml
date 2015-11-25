@@ -39,3 +39,5 @@ machine:
     testvar: $HOME
   post:
     - echo $testvar
+  services:
+    - redis
