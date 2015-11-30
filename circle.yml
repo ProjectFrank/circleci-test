@@ -31,10 +31,10 @@ dependencies:
     - ~/nvm/versions/node/v4.2.1/lib/node_modules
 
 machine:
-  pre:
-    - sudo bash -c "echo '--with-freetype-dir=/usr/include/freetype2' >> /usr/local/share/php-build/default_configure_options"
-    - phpenv install 5.5.21
-    - phpenv local 5.5.21 && php $CIRCLE_PROJECT_REPONAME/test.php
+  # pre:
+  #   - sudo bash -c "echo '--with-freetype-dir=/usr/include/freetype2' >> /usr/local/share/php-build/default_configure_options"
+  #   - phpenv install 5.5.21
+  #   - phpenv local 5.5.21 && php $CIRCLE_PROJECT_REPONAME/test.php
   environment:
     testvar: $HOME
   post:
