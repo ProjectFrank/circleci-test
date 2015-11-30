@@ -38,6 +38,8 @@ machine:
   environment:
     testvar: $HOME
   post:
-    - echo $testvar
+    - npm -v
+  pre:
+    - rm -r ~/nvm/versions/node/v5.1.0
   node:
-    version: v5
+    version: 5.1
