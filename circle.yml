@@ -40,6 +40,6 @@ machine:
   post:
     - npm -v
   pre:
-    - rm -r ~/nvm/versions/node/v5.1.0
+    - nvm uninstall 5.1 && nvm install 5.1
   node:
     version: 5.1
