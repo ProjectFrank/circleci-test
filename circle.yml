@@ -39,7 +39,8 @@ machine:
     testvar: $HOME
   post:
     - npm -v
+    - cd $CIRCLE_PROJECT_REPONAME && git describe --tags
   pre:
-    - nvm uninstall 5.1 && nvm install 5.1
+    - nvm uninstall 5.1
   node:
     version: 5.1
