@@ -39,5 +39,5 @@ machine:
     testvar: $HOME
   post:
     - echo $testvar
-  services:
-    - redis
+  node:
+    version: v5
