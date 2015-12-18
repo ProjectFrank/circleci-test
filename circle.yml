@@ -31,8 +31,7 @@ machine:
 
 dependencies:
   pre:
-    - |
-      npm login <<!
+    - npm login <<!
       poop
       poop
       poop@poop.com
