@@ -1,6 +1,8 @@
 test:
   override:
-    - echo "no tests"
+    - echo "no tests"; false
+  post:
+    - echo "post"
       
 deployment:
   allthethings:
@@ -31,7 +33,8 @@ machine:
 
 dependencies:
   pre:
-    - npm login <<!
+    - |
+      npm login <<!
       poop
       poop
       poop@poop.com
