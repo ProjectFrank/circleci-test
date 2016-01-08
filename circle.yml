@@ -29,10 +29,13 @@ machine:
   node:
     version: 4.2.0
   pre:
+  # Log all commits since last commit in last successful build
     - |
       cd $CIRCLE_PROJECT_REPONAME && git log `echo $(curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\?circle-token\=$CIRCLE_TOKEN | jq '[.[] | select(.status=="success" or .status=="fixed") | .all_commit_details[-1].commit][0]') | sed -e 's/^"//'  -e 's/"$//'`..HEAD | cat
+    - ls foo1 foo2; true
   post:
-    - pwd
+    - mkdir foo1 foo2
+    - touch foo1/thing foo2/thing
 
 dependencies:
   pre:
@@ -42,3 +45,5 @@ dependencies:
       poop
       poop@poop.com
       !
+  cache_directories:
+    - ~/foo*
