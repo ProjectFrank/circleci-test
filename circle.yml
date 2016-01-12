@@ -27,7 +27,7 @@ machine:
   environment:
     testvar: $HOME
   node:
-    version: 4.2.0
+    version: stable
   pre:
   # Log all commits since last commit in last successful build
     - |
