@@ -23,6 +23,10 @@ notify:
   webhooks:
     - url: http://requestb.in/notvalid
 
+checkout:
+  post:
+    - pwd
+
 machine:
   environment:
     testvar: $HOME
