@@ -33,7 +33,7 @@ machine:
   environment:
     DYLD_LIBRARY_PATH: /Applications/Xcode-7.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib:$(DYLD_LIBRARY_PATH)
   node:
-    version: 4.2.4
+    version: 5.0
   pre:
     - |
       curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\&circle-token\=$CIRCLE_TOKEN
