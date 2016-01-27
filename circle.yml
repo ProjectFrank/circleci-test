@@ -44,5 +44,7 @@ machine:
     - npm -v 
 
 dependencies:
+  pre:
+  - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow --tags"
   override:
     - echo "nothing"
