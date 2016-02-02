@@ -45,6 +45,7 @@ machine:
 
 dependencies:
   pre:
-  - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow --tags"
+  - git rev-parse --git-dir
+  - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || (git fetch --unshallow --tags; echo \"ran git fetch\")"
   override:
     - echo "nothing"
