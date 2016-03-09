@@ -49,8 +49,13 @@ dependencies:
     - echo "no deps"
 
 deployment:
-  tomaster:
-    branch: stupid-branch
+  testtags:
+    tag: /test.*/
     commands:
-      - ::wait-for-deploy-lock
-      - sleep 120
+      - echo "this is for testing tags"
+
+# deployment:
+#   tomaster:
+#     commands:
+#       - ::wait-for-deploy-lock
+#       - sleep 120
