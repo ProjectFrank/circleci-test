@@ -1,60 +1,9 @@
-# machine:
-#   environment:
-#     PATH: ~/.m2/apache-maven-3.3.3/bin:$PATH
-#     SHORT_SHA1: |
-#                 $(echo $CIRCLE_SHA1 | cut -c1-4)
-#   post:
-#     - echo $SHORT_SHA1
-#     - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-#     - echo $PREVIOUS_SHA1
-#   pre:
-#      - case $CIRCLE_BRANCH in stupid-branch) echo "export thing=\"stuff\"" >> .circlerc;; esac;
-#      - echo $thing
-#      - sudo apt-get update; sudo apt-get install jq
-#      - |
-#        PREVIOUS_SHA1=$(curl --header "Accept:application/json" https://circleci.com/api/v1/project/ProjectFrank/circleci-test/tree/stupid-branch | jq '.[0].vcs_revision' | tr -d '\"'); echo "export PREVIOUS_SHA1=$PREVIOUS_SHA1" >> ~/.circlerc
-# #    - sudo sed -i '/ulimit -l unlimited/d' /etc/init.d/cassandra
-# #    - sudo sed -i '/ulimit -n "$FD_LIMIT"/d' /etc/init.d/cassandra
-#      - |
-#        echo "stuff
-#        more
-#        stuff"
-#   services:
-#     - cassandra
-#   node:
-#     version: 0.12.0
-machine:
-  node:
-    version: 4.1
-  # post:
-  #   - git log `echo $(curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\?circle-token\=$CIRCLE_TOKEN | jq '[.[] | select(.status=="success" or .status=="fixed") | .all_commit_details[-1].commit][0]') | sed -e 's/^"//'  -e 's/"$//'`..HEAD
+dependencies:
+  override:
+    - case $CIRCLE_NODE_INDEX in 0) NODE_VERSION=4 ;; 1) NODE_VERSION=5 ;; 2) NODE_VERSION=6 ;; esac; nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
+    - node -v
+    - npm install
 
 test:
   override:
-    - echo "no tests" 
-      
-# deployment:
-#   allthethings:
-#     tag: /release\/.*/
-#     commands:
-#       - echo "all the things":
-#           parallel: true
-
-dependencies:
-  # cache_directories:
-  #   - ~/go1.5.linux-amd64.tar.gz
-  #   - ~/.rvm/rubies/ruby-2.2.3
-  override:
-    - echo "no deps"
-
-deployment:
-  testtags:
-    tag: /test.*/
-    commands:
-      - echo "this is for testing tags"
-
-# deployment:
-#   tomaster:
-#     commands:
-#       - ::wait-for-deploy-lock
-#       - sleep 120
+    - node 
