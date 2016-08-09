@@ -10,15 +10,7 @@ deployment:
   allthethings:
     branch: /.*/
     commands:
-      - echo "deployment"
-
-compile:
-  override: 
-    - echo stuff
-
-teardown:
-  pre:
-    - echo "stuff"
+      - echo "deployment"; false
 
 notify:
   webhooks:
