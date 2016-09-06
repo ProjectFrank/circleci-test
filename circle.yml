@@ -1,7 +1,4 @@
-general:
-  branches:
-    ignore:
-      - prod-testing-branch
+
 
 test:
   override:
