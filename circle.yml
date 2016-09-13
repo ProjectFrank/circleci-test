@@ -1,36 +1,45 @@
-general:
-  build_dir: ../$THING
 
-machine:
-  pre:
-    - mkdir -p ~/nodirexists
-  environment:
-    XCODE_WORKSPACE: dummy
-    XCODE_SCHEME: dummy
-    CIRCLE_TAG: $(cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags)
-    THING: nodirexists
+
+test:
+  override:
+    - echo "no tests"
   post:
-    - echo $log
-    - cd $CIRCLE_PROJECT_REPONAME && git describe --abbrev=0 --tags
-  services:
-    - docker
-
-notify:
-  webhooks:
-    - url: https://hooks.slack.com/services/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
-
+    - echo "post"
+      
 deployment:
   allthethings:
     branch: /.*/
     commands:
-      - echo "all the things":
-          parallel: true
+      - echo "deployment"; false
+      - echo "another deployment command"
 
+notify:
+  webhooks:
+    - url: http://requestb.in/notvalid
+
+checkout:
+  post:
+    - pwd
+
+machine:
+  environment:
+    DYLD_LIBRARY_PATH: /Applications/Xcode-7.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib:$(DYLD_LIBRARY_PATH)
+    PATH: ~/bin:$PATH
+  node:
+    version: 4.2.6
+  pre:
+  #   - |
+  #     curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\&circle-token\=$CIRCLE_TOKEN
+  # # Log all commits since last commit in last successful build
+  #   - |
+  #     cd $CIRCLE_PROJECT_REPONAME && git log `echo $(curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\?circle-token\=$CIRCLE_TOKEN | jq '[.[] | select(.status=="success" or .status=="fixed") | .all_commit_details[-1].commit][0]') | sed -e 's/^"//'  -e 's/"$//'`..HEAD | cat | tee changelog.txt
+  #   - |
+  #     if [ [ $CIRCLE_BRANCH == 'master' ] && [ `git name-rev --name-only HEAD` != 'master' ] ];
+  #     then git branch -d `git name-rev --name-only HEAD`;
+  #     fi
+  # post:
+  #   - npm -v
 dependencies:
   override:
-    - pwd
-  
-test:
-  override:
-    - echo "NO TESTSS"
-    - pwd
+    - echo "nothing"
+    
