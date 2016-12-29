@@ -15,20 +15,10 @@ deployment:
       - echo "deployment"; false
       - echo "another deployment command"
 
-notify:
-  webhooks:
-    - url: http://requestb.in/notvalid
-
-checkout:
-  post:
-    - pwd
-
 machine:
   environment:
     DYLD_LIBRARY_PATH: /Applications/Xcode-7.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib:$(DYLD_LIBRARY_PATH)
     PATH: ~/bin:$PATH
-  node:
-    version: 4.2.6
   pre:
   #   - |
   #     curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\&circle-token\=$CIRCLE_TOKEN
@@ -42,6 +32,8 @@ machine:
   # post:
   #   - npm -v
 dependencies:
+  cache_directories:
+    - ~/cache-test
   override:
-    - echo "nothing"
-    
+    - mkdir -p ~/cache-test
+    - echo "from prod-testing-branch" > ~/cache-test/from-prod-testing-branch.txt
