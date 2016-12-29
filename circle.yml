@@ -25,8 +25,6 @@
 #   node:
 #     version: 0.12.0
 machine:
-  node:
-    version: 4.1
   # post:
   #   - git log `echo $(curl -H "accept: application/json" https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH\?limit\=100\?circle-token\=$CIRCLE_TOKEN | jq '[.[] | select(.status=="success" or .status=="fixed") | .all_commit_details[-1].commit][0]') | sed -e 's/^"//'  -e 's/"$//'`..HEAD
 
@@ -49,7 +47,8 @@ dependencies:
   #   - ~/go1.5.linux-amd64.tar.gz
   #   - ~/.rvm/rubies/ruby-2.2.3
   override:
-    - echo "no deps"
+    - mkdir -p ~/cache-test
+    - ls cache-test
 
 deployment:
   testtags:
