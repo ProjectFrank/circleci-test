@@ -30,7 +30,7 @@
 
 test:
   override:
-    - echo "no tests"
+    - echo "no tests"; sleep 60
       
 # deployment:
 #   allthethings:
