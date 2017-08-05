@@ -1,9 +1,14 @@
-dependencies:
-  override:
-    - case $CIRCLE_NODE_INDEX in 0) NODE_VERSION=4 ;; 1) NODE_VERSION=5 ;; 2) NODE_VERSION=6 ;; esac; nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
-    - node -v
-    - npm install
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:latest
+    working_directory: /root/hi
+    steps:
+      - echo "hi"
 
-test:
-  override:
-    - node 
+workflows:
+  version: 2
+  my-workflow:
+    jobs:
+      - build
