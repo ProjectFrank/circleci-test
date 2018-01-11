@@ -44,14 +44,15 @@ dependencies:
   #   - ~/go1.5.linux-amd64.tar.gz
   #   - ~/.rvm/rubies/ruby-2.2.3
   override:
+    - echo $CI_PULL_REQUEST
     - mkdir -p ~/cache-test
     - ls ~/cache-test
 
-deployment:
-  testtags:
-    tag: /test.*/
-    commands:
-      - echo "this is for testing tags"
+# deployment:
+#   testtags:
+#     tag: /test.*/
+#     commands:
+#       - echo "this is for testing tags"
 
 # deployment:
 #   tomaster:
